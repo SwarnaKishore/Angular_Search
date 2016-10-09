@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Search Implementation</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+		
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="center-align" ng-app="instantSearch" ng-controller="InstantSearchController">
+	<h2>Angular search snippet</h2>
+	<div class="row">
+    <form class="col s6 offset-s3">
+			
+			<input type="text" ng-model="searchString" placeholder="Enter your search terms" />
+			</form>
+		</div>
+
+		
+
+		<div class="container">
+			<div class="collection" ng-repeat="i in items | searchFor:searchString">
+              <a href="{{i.url}}" target="_blank" class="collection-item">{{i.title}}</a>
+            </div>
+
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+		  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	</body>
+</html>
